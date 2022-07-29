@@ -19,6 +19,7 @@ EbsElemntCretedControl() method use:
 <li>EBSSeleniumControl.Optionsİslemleri.EbsPageLoadStrategy("None");</li>
 <li>EBSSeleniumControl.Optionsİslemleri.ebsİnfoBarHide();</li>
 <li>EBSSeleniumControl.Optionsİslemleri.EbsExtentionLoad(Application.StartupPath + "//ebs.crx");</li>
+<li>EBSSeleniumControl.Optionsİslemleri.ebsDevtoolsOpen();</li>
 
 <h4>Mouse İslemleri<h4/>
 <li>EBSSeleniumControl.Mouseİslemleri.EBSDoubleClick(drv, "/*[@name='estiyakclass']"); </li>
