@@ -20,6 +20,8 @@ EbsElemntCretedControl() method use:
 <li>EBSSeleniumControl.Optionsİslemleri.ebsİnfoBarHide();</li>
 <li>EBSSeleniumControl.Optionsİslemleri.EbsExtentionLoad(Application.StartupPath + "//ebs.crx");</li>
 <li>EBSSeleniumControl.Optionsİslemleri.ebsDevtoolsOpen();</li>
+<li>EBSSeleniumControl.Optionsİslemleri.ebsChroumeConsoleHide();</li>
+<li>EBSSeleniumControl.Optionsİslemleri.ebsWebbrowserHide();</li>
 
 <h4>Mouse İslemleri<h4/>
 <li>EBSSeleniumControl.Mouseİslemleri.EBSDoubleClick(drv, "/*[@name='estiyakclass']"); </li>
@@ -27,7 +29,6 @@ EbsElemntCretedControl() method use:
 <li>EBSSeleniumControl.Mouseİslemleri.EBSClickAndHold(drv, "//*[@id='ebubekirclass']"); </li>
 <li>EBSSeleniumControl.Mouseİslemleri.EBSMouseClick(drv,"//*[@class='ebs']"); </li>
 <li>EBSSeleniumControl.Mouseİslemleri.EBSContextClick(drv); </li>
-
 </ul>
   
 <hr>
@@ -38,5 +39,6 @@ Not:
   <li> More methods will be added in the future</li>
   <li> This class is prepared for Selenium 4 and above versions</li>
   <li> In order to use this class, you need to Install Selenium in your Project</li>
+  <li> Don't forget to add EBS Selenium Control.srvs and EBSSelenium Control.op to the "ChromeDriver" you defined while using Options, or you will get an error.</li>
 </ul>
 
