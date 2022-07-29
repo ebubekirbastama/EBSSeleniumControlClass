@@ -11,11 +11,14 @@ namespace Selenium4EgitimSeti
         /// <summary>
         /// Bu class By& Ebubekir Bastama Tarafın'dan geliştirlmiştir.
         /// </summary>
+        /// 
         #region Değişkenler
         public static ChromeOptions op = new ChromeOptions();
+        public static ChromeDriverService srvs;
         private static string WindowsProfilePath = "C:\\Users\\" + Environment.UserName.ToString() + "\\AppData\\Local\\Google\\Chrome\\User Data\\";
         private static string infobarhide = "enable-automation";
         private static string Devtoolsopenop = "--auto-open-devtools-for-tabs";
+        private static string WebbrowserHeadless = "Headless";
         #endregion
 
         internal class JavascriptİSlemleri
@@ -174,6 +177,38 @@ namespace Selenium4EgitimSeti
                 return op;
             }
             #endregion
+            #region ChroumeDriver Console Gizleme 
+            private static ChromeDriverService EBSChroumeConsoleHide()
+            {
+                srvs.HideCommandPromptWindow = false;
+                return srvs;
+            }
+            /// <summary>
+            /// Bu metod ile program başlarken açılan console alanını gizliyoruz. 
+            /// </summary>
+            /// <returns></returns>
+            public static ChromeDriverService ebsChroumeConsoleHide()
+            {
+                EBSChroumeConsoleHide();
+                return srvs;
+            }
+            #endregion
+            #region Selenium Browser Gizleme 
+            private static ChromeOptions EBSWebbrowserHide()
+            {
+                op.AddArgument(WebbrowserHeadless);
+                return op;
+            }
+            /// <summary>
+            /// Bu metod ile ilgili açılan Selenium Web Tarayıcısını gizliyoruz.
+            /// </summary>
+            /// <returns></returns>
+            public static ChromeOptions ebsWebbrowserHide()
+            {
+                EBSWebbrowserHide();
+                return op;
+            }
+            #endregion
         }
         internal class Mouseİslemleri
         {
@@ -236,6 +271,7 @@ namespace Selenium4EgitimSeti
             #endregion
 
         }
+
 
 
     }
