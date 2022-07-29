@@ -15,6 +15,7 @@ namespace Selenium4EgitimSeti
         public static ChromeOptions op = new ChromeOptions();
         private static string WindowsProfilePath = "C:\\Users\\" + Environment.UserName.ToString() + "\\AppData\\Local\\Google\\Chrome\\User Data\\";
         private static string infobarhide = "enable-automation";
+        private static string Devtoolsopenop = "--auto-open-devtools-for-tabs";
         #endregion
 
         internal class JavascriptİSlemleri
@@ -157,8 +158,24 @@ namespace Selenium4EgitimSeti
                 return op;
             }
             #endregion
+            #region Webbrowser Devtools açma 
+            private static ChromeOptions EBSDevtoolsOpen()
+            {
+                op.AddArgument(Devtoolsopenop);
+                return op;
+            }
+            /// <summary>
+            /// Bu metod ile F12 ile açtığımız Console alanını yani Devtools alanını otomatik açtırabiliriz.
+            /// </summary>
+            /// <returns></returns>
+            public static ChromeOptions ebsDevtoolsOpen()
+            {
+                EBSDevtoolsOpen();
+                return op;
+            }
+            #endregion
         }
-        internal class Mousİslemleri
+        internal class Mouseİslemleri
         {
             #region Mous Tıklama
             /// <summary>
