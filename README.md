@@ -8,9 +8,14 @@ EbsElemntCretedControl() method use:
 <h3>Example Code:</h3>
 
 <ul class="container float">
-  <li> EBSSeleniumControl.EbsElemntCretedControl(3000, "//*[@class='post-title entry-title']",drv);</li>
-  <li> EBSSeleniumControl.EbsPageLoadStrategy("None");</li>
-  <li>EBSSeleniumControl.EbsExtentionLoad(Application.StartupPath + "//ebs.crx");</li>
+ <li> EBSSeleniumControl.EbsElemntCretedControl(3000, "//*[@class='post-title entry-title']",drv);</li>
+ <li> EBSSeleniumControl.EbsPageLoadStrategy("None");</li>
+ <li> EBSSeleniumControl.EbsExtentionLoad(Application.StartupPath + "//ebs.crx");</li>
+ <li> EBSSeleniumControl.EbsProfileFolderLoad("");</li>
+ <li> EBSSeleniumControl.EbsPageLoadStrategy("None");</li>
+ <li> EBSSeleniumControl.EbsProfileFolderLoad("");</li>
+ <li> EBSSeleniumControl.ebsİnfoBarHide();</li>
+ <li> EBSSeleniumControl.EbsExtentionLoad(Application.StartupPath + "//ebs.crx");</li>
 </ul>
   
 <hr>
