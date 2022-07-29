@@ -8,14 +8,25 @@ EbsElemntCretedControl() method use:
 <h3>Example Code:</h3>
 
 <ul class="container float">
- <li> EBSSeleniumControl.EbsElemntCretedControl(3000, "//*[@class='post-title entry-title']",drv);</li>
- <li> EBSSeleniumControl.EbsPageLoadStrategy("None");</li>
- <li> EBSSeleniumControl.EbsExtentionLoad(Application.StartupPath + "//ebs.crx");</li>
- <li> EBSSeleniumControl.EbsProfileFolderLoad("");</li>
- <li> EBSSeleniumControl.EbsPageLoadStrategy("None");</li>
- <li> EBSSeleniumControl.EbsProfileFolderLoad("");</li>
- <li> EBSSeleniumControl.ebsİnfoBarHide();</li>
- <li> EBSSeleniumControl.EbsExtentionLoad(Application.StartupPath + "//ebs.crx");</li>
+<h4>JavascriptİSlemleri<h4/>
+<li>EBSSeleniumControl.JavascriptİSlemleri.EBSJavaScriptScrollDown(drv,0,9999); </li>
+
+<h4>Kontrolİslemleri<h4/>
+<li>EBSSeleniumControl.Kontrolİslemleri.EbsElemntCretedControl(3000, "//*[@class='post-title entry-title']", drv);</li>
+
+<h4>Optionsİslemleri<h4/>
+<li>EBSSeleniumControl.Optionsİslemleri.EbsProfileFolderLoad("");</li>
+<li>EBSSeleniumControl.Optionsİslemleri.EbsPageLoadStrategy("None");</li>
+<li>EBSSeleniumControl.Optionsİslemleri.ebsİnfoBarHide();</li>
+<li>EBSSeleniumControl.Optionsİslemleri.EbsExtentionLoad(Application.StartupPath + "//ebs.crx");</li>
+
+<h4>Mouse İslemleri<h4/>
+<li>EBSSeleniumControl.Mouseİslemleri.EBSDoubleClick(drv, "/*[@name='estiyakclass']"); </li>
+<li>EBSSeleniumControl.Mouseİslemleri.EBSDragAndDrop(drv, "//div[@id='dargıd']", "//button[@id='droputbtn']"); </li>
+<li>EBSSeleniumControl.Mouseİslemleri.EBSClickAndHold(drv, "//*[@id='ebubekirclass']"); </li>
+<li>EBSSeleniumControl.Mouseİslemleri.EBSMouseClick(drv,"//*[@class='ebs']"); </li>
+<li>EBSSeleniumControl.Mouseİslemleri.EBSContextClick(drv); </li>
+
 </ul>
   
 <hr>
