@@ -7,7 +7,12 @@ namespace Selenium4EgitimSeti
 {
     internal class EBSSeleniumControl
     {
+        #region Değişkenler
         public static ChromeOptions op = new ChromeOptions();
+        private static string WindowsProfilePath = "C:\\Users\\" + Environment.UserName.ToString() + "\\AppData\\Local\\Google\\Chrome\\User Data\\";
+        private static string infobarhide = "enable-automation";
+        #endregion
+        #region Element Kontrol Metodu
         private static void EBSElemntCretedControl(int waiting_time, string Xpath, ChromeDriver drv)
         {
 
@@ -35,6 +40,8 @@ namespace Selenium4EgitimSeti
         {
             EBSElemntCretedControl(waiting_time, Xpath, drv);
         }
+        #endregion
+        #region Sayfa Yükleme Durumları
         private static ChromeOptions EBSPageLoadStrategy(string PageLoadStrategystring = "None")
         {
             if (PageLoadStrategystring == "Default")
@@ -64,20 +71,68 @@ namespace Selenium4EgitimSeti
         {
             return EBSPageLoadStrategy(PageLoadStrategystring);
         }
-        /// <summary>
-        /// Bu metod ile sadece eklenti yolunu veriyorsunuz...
-        /// </summary>
-        /// <param name="ExtentionYol"></param>
-        /// <returns></returns>
+        #endregion
+        #region Eklenti Yükleme
         private static ChromeOptions EBSExtentionLoad(params string[] ExtentionYol)
         {
             op.AddExtensions(ExtentionYol);
             return op;
         }
+        /// <summary>
+        /// Bu metod ile sadece eklenti yolunu veriyorsunuz...
+        /// </summary>
+        /// <param name="ExtentionYol"></param>
+        /// <returns></returns>
         public static ChromeOptions EbsExtentionLoad(params string[] ExtentionYol)
         {
             EBSExtentionLoad(ExtentionYol);
             return op;
         }
+        #endregion
+        #region Profil Yolu
+        private static ChromeOptions EBSProfileFolderLoad(string ProfilePath)
+        {
+            op.AddArgument("--user-data-dir=" + ProfilePath);
+            return op;
+        }
+        /// <summary>
+        /// Bu metod size bilgisayaraınızda bulunan tarayıcı özelliklerini kullanmanızı sağlar eğer boş veri yollarsanız ("") Default Profili seçer Fakat siz profil dosyasını başka bir yerden çekiyorsanız yolu belirtebilirsiniz.
+        /// </summary>
+        /// <param name="ProfilePath"></param>
+        /// <returns></returns>
+        public static ChromeOptions EbsProfileFolderLoad(string ProfilePath)
+        {
+            if (ProfilePath == "")
+            {
+                EbsProfileFolderLoad(WindowsProfilePath);
+            }
+            else
+            {
+                EBSProfileFolderLoad(ProfilePath);
+            }
+
+            return op;
+        }
+        #endregion
+        #region İnfo Bar Gizleme
+        private static ChromeOptions EBSİnfoBarHide()
+        {
+            op.AddExcludedArgument(infobarhide);
+            return op;
+        }
+        /// <summary>
+        ///  Bu metodu kullandığınızda info bar gizlecenektir.
+        /// </summary>
+        /// <param name="ProfilePath"></param>
+        /// <returns></returns>
+        public static ChromeOptions ebsİnfoBarHide()
+        {
+            EBSİnfoBarHide();
+
+            return op;
+        }
+        #endregion
+
+
     }
 }
