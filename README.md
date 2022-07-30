@@ -31,6 +31,8 @@ EbsElemntCretedControl() method use:
 <li>EBSSeleniumControl.Mouseİslemleri.EBSClickAndHold(drv, "//*[@id='ebubekirclass']"); </li>
 <li>EBSSeleniumControl.Mouseİslemleri.EBSMouseClick(drv,"//*[@class='ebs']"); </li>
 <li>EBSSeleniumControl.Mouseİslemleri.EBSContextClick(drv); </li>
+<li>EBSSeleniumControl.Optionsİslemleri.ebsCloudFlareBypass();</li>
+<li>EBSSeleniumControl.Optionsİslemleri.ebsUserAgentChange();</li>
 </ul>
   
 <hr>
