@@ -19,6 +19,7 @@ namespace Selenium4EgitimSeti
         private static string infobarhide = "enable-automation";
         private static string Devtoolsopenop = "--auto-open-devtools-for-tabs";
         private static string WebbrowserHeadless = "Headless";
+        private static string Proxyxpth = "--proxy-server=";
         #endregion
 
         internal class JavascriptİSlemleri
@@ -30,7 +31,7 @@ namespace Selenium4EgitimSeti
             /// <param name="x"></param>
             /// <param name="y"></param>
             #region Scroll Aşağı İndirme
-            public static void EBSJavaScriptScrollDown(ChromeDriver drv, int x=0, int y=100)
+            public static void EBSJavaScriptScrollDown(ChromeDriver drv, int x = 0, int y = 100)
             {
                 drv.ExecuteScript("window.scrollBy('" + x + "','" + y + "')");
             }
@@ -209,6 +210,29 @@ namespace Selenium4EgitimSeti
                 return op;
             }
             #endregion
+            #region Proxy Bağlantısı
+            private static ChromeOptions EBSProxyConnect(string ipadres, string port)
+            {
+                op.AddArgument(Proxyxpth + ipadres + port);
+                return op;
+            }
+
+            public static ChromeOptions ebsExtentionProxyCoonect(string ipadres, string port,string ExtentionYol)
+            {
+
+                EBSProxyConnect(ipadres, port);
+                EbsExtentionLoad(ExtentionYol);
+
+                return op;
+            }
+            public static ChromeOptions ebseklProxyCoonect(string ipadres, string port)
+            {
+
+                EBSProxyConnect(ipadres, port);
+
+                return op;
+            }
+            #endregion
         }
         internal class Mouseİslemleri
         {
@@ -230,7 +254,7 @@ namespace Selenium4EgitimSeti
             /// </summary>
             /// <param name="drv"></param>
             /// <param name="Xpath"></param>
-            public static void EBSContextClick(ChromeDriver drv, string Xpath="//html")
+            public static void EBSContextClick(ChromeDriver drv, string Xpath = "//html")
             {
                 Actions ac = new Actions(drv);
                 ac.ContextClick(drv.FindElement(By.XPath(Xpath))).Release().Build().Perform();
