@@ -9,7 +9,7 @@ namespace Selenium4EgitimSeti
     internal class EBSSeleniumControl
     {
         /// <summary>
-        /// Bu class By& Ebubekir Bastama Tarafın'dan geliştirlmiştir.
+        /// Bu class By& Ebubekir Bastama Tarafın'dan geliştirlmiştir. Bu gibi Yararlı metodların gelmesini istiyorsanız Bizlere sponsor olabilrisiniz.
         /// </summary>
         /// 
         #region Değişkenler
@@ -20,6 +20,9 @@ namespace Selenium4EgitimSeti
         private static string Devtoolsopenop = "--auto-open-devtools-for-tabs";
         private static string WebbrowserHeadless = "Headless";
         private static string Proxyxpth = "--proxy-server=";
+        private static string CloudFlareBypassxph = "disable-blink-features=AutomationControlled";
+        private static string UserAgentxpth = "--user-agent=";
+
         #endregion
 
         internal class JavascriptİSlemleri
@@ -216,8 +219,14 @@ namespace Selenium4EgitimSeti
                 op.AddArgument(Proxyxpth + ipadres + port);
                 return op;
             }
-
-            public static ChromeOptions ebsExtentionProxyCoonect(string ipadres, string port,string ExtentionYol)
+            /// <summary>
+            /// Bu metod ile proxy'e kullanıcı adı ve şifre girecekseniz kullanın ve eklenti yolunu belirtiniz...
+            /// </summary>
+            /// <param name="ipadres"></param>
+            /// <param name="port"></param>
+            /// <param name="ExtentionYol"></param>
+            /// <returns></returns>
+            public static ChromeOptions ebsExtentionProxyCoonect(string ipadres, string port, string ExtentionYol)
             {
 
                 EBSProxyConnect(ipadres, port);
@@ -225,11 +234,52 @@ namespace Selenium4EgitimSeti
 
                 return op;
             }
+            /// <summary>
+            /// Bu metodu kullanıcı adı ve şifresi olmayan proxy lerde kullanın...
+            /// </summary>
+            /// <param name="ipadres"></param>
+            /// <param name="port"></param>
+            /// <returns></returns>
             public static ChromeOptions ebseklProxyCoonect(string ipadres, string port)
             {
 
                 EBSProxyConnect(ipadres, port);
 
+                return op;
+            }
+            #endregion
+            #region CloudFlareBypass Metodu
+            private static ChromeOptions EBSCloudFlareBypass()
+            {
+                op.AddArgument(CloudFlareBypassxph);
+                return op;
+            }
+            /// <summary>
+            /// Bu metodu kullanırsanız CloudFlare Sistemi Bypass edip siteye ulaşabilirsiniz.
+            /// </summary>
+            /// <returns></returns>
+            public static ChromeOptions ebsCloudFlareBypass()
+            {
+
+                EBSCloudFlareBypass();
+                return op;
+            }
+            #endregion
+            #region User-Agent Değiştirme Metodu
+            private static ChromeOptions EBSUserAgentChange(string EBSUserAgentString = "Mozilla/5.0 (Linux; Android 9; LM-X220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Mobile Safari/537.36")
+            {
+                op.AddArgument(UserAgentxpth + EBSUserAgentString);
+                return op;
+            }
+            /// <summary>
+            /// Bu Metod ile Tarayıcının User Agent Verilerini Değiştirebilirsiniz. Eğer user agent vermezseniz android user-agent default olarak belirlenir...
+            /// </summary>
+            /// <param name="EBSUserAgentString"></param>
+            /// <returns></returns>
+            public static ChromeOptions ebsUserAgentChange(string EBSUserAgentString = "Mozilla/5.0 (Linux; Android 9; LM-X220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Mobile Safari/537.36")
+            {
+
+                EBSUserAgentChange(EBSUserAgentString);
                 return op;
             }
             #endregion
