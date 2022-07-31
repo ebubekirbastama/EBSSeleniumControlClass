@@ -25,6 +25,7 @@ EbsElemntCretedControl() method use:
 <li>EBSSeleniumControl.Optionsİslemleri.ebsExtentionProxyCoonect("192.168.1.1","8080", Application.StartupPath + "//EBSProxy.crx");</li>
 <li>EBSSeleniumControl.Optionsİslemleri.ebseklProxyCoonect("192.168.1.1","8080");</li>
 <li>EBSSeleniumControl.Optionsİslemleri.ebsincognitoMode();</li>
+<li>EBSSeleniumControl.Optionsİslemleri.ebsisolation();</li>
 
 <h4>Mouse İslemleri<h4/>
 <li>EBSSeleniumControl.Mouseİslemleri.EBSDoubleClick(drv, "/*[@name='estiyakclass']"); </li>
