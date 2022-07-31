@@ -23,6 +23,7 @@ namespace Selenium4EgitimSeti
         private static string CloudFlareBypassxph = "disable-blink-features=AutomationControlled";
         private static string UserAgentxpth = "--user-agent=";
         private static string İncognitoMode = "--incognito";
+        private static string İsolation = "--disable-site-isolation-trials";
 
         #endregion
 
@@ -38,6 +39,17 @@ namespace Selenium4EgitimSeti
             public static void EBSJavaScriptScrollDown(ChromeDriver drv, int x = 0, int y = 100)
             {
                 drv.ExecuteScript("window.scrollBy('" + x + "','" + y + "')");
+            }
+            #endregion
+            #region Javascript yeni tab açma
+            /// <summary>
+            /// Bu metod ile javascript ile yeni sekme açıp siteye gidebilirsiniz...
+            /// </summary>
+            /// <param name="drv"></param>
+            /// <param name="url"></param>
+            public static void EBSJavaScriptopennewtab(ChromeDriver drv, string url)
+            {
+                drv.ExecuteScript("window.open('" + url + "')");
             }
             #endregion
         }
@@ -256,7 +268,7 @@ namespace Selenium4EgitimSeti
                 return op;
             }
             /// <summary>
-            /// Bu metodu kullanırsanız CloudFlare Sistemi Bypass edip siteye ulaşabilirsiniz.
+            /// Bu metodu kullanırsanız CloudFlare Sistemi Bypass edip siteye ulaşabilirsiniz. javascript ile yeni sekmede siteyi açmayı unutmayın yoksa gene sorun verir site drv. örnek kod    drv.ExecuteScript("window.open('https://www.ebubekirbastama.com')");
             /// </summary>
             /// <returns></returns>
             public static ChromeOptions ebsCloudFlareBypass()
@@ -298,6 +310,20 @@ namespace Selenium4EgitimSeti
             {
 
                 EBSincognitoMode();
+                return op;
+            }
+            #endregion
+            #region Chroume EBSisolation Disable Etme Kodu
+            private static ChromeOptions EBSisolation()
+            {
+                op.AddArgument(İsolation);
+                return op;
+            }
+
+            public static ChromeOptions ebsisolation()
+            {
+
+                EBSisolation();
                 return op;
             }
             #endregion
