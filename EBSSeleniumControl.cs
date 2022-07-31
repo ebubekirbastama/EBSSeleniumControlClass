@@ -22,6 +22,7 @@ namespace Selenium4EgitimSeti
         private static string Proxyxpth = "--proxy-server=";
         private static string CloudFlareBypassxph = "disable-blink-features=AutomationControlled";
         private static string UserAgentxpth = "--user-agent=";
+        private static string İncognitoMode = "--incognito";
 
         #endregion
 
@@ -280,6 +281,23 @@ namespace Selenium4EgitimSeti
             {
 
                 EBSUserAgentChange(EBSUserAgentString);
+                return op;
+            }
+            #endregion
+            #region Web Tarayıcıyı Gizli Modda Açma Metodu
+            private static ChromeOptions EBSincognitoMode()
+            {
+                op.AddArgument(İncognitoMode);
+                return op;
+            }
+            /// <summary>
+            /// Bu metodu kullanırsanız web tarayıcısı Gizli modda açılacaktır...
+            /// </summary>
+            /// <returns></returns>
+            public static ChromeOptions ebsincognitoMode()
+            {
+
+                EBSincognitoMode();
                 return op;
             }
             #endregion
