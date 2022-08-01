@@ -37,6 +37,12 @@ EbsElemntCretedControl() method use:
 <li>EBSSeleniumControl.Optionsİslemleri.ebsUserAgentChange();</li>
 </ul>
   
+  <h4>ExecuteCdpCommand İslemleri<h4/>
+<li>EBSSeleniumControl.ExecuteCdpCommandİslemleri.EBSExecuteCdpUserAgent(drv,"", "uk-UA");</li>
+<li>EBSSeleniumControl.ExecuteCdpCommandİslemleri.EBSExecuteCdpCommandMobile(drv);</li>
+
+</ul>
+  
 <hr>
 <h2> With this code you will avoid being stuck in "no such item" you will be saved </h2>
 
