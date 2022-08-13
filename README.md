@@ -35,6 +35,7 @@ EbsElemntCretedControl() method use:
 <li>EBSSeleniumControl.Mouseİslemleri.EBSContextClick(drv); </li>
 <li>EBSSeleniumControl.Optionsİslemleri.ebsCloudFlareBypass();</li>
 <li>EBSSeleniumControl.Optionsİslemleri.ebsUserAgentChange();</li>
+<li>EBSSeleniumControl.Optionsİslemleri.ebsGoogleMailLogin();</li>
 </ul>
   
   <h4>ExecuteCdpCommand İslemleri<h4/>
