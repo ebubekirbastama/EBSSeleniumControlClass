@@ -267,6 +267,7 @@ namespace Selenium4EgitimSeti
         private static string UserAgentxpth = "--user-agent=";
         private static string İncognitoMode = "--incognito";
         private static string İsolation = "--disable-site-isolation-trials";
+        private static string EBSUserAgentGoogleString = "Mozilla/5.0 (Linux; Android 9; LM-X220) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Mobile Safari/537.36";
         public static string[] Lanquagecode =
 {
 "af",
@@ -811,6 +812,21 @@ namespace Selenium4EgitimSeti
                 return op;
             }
             #endregion
+            #region Google Mail Giriş
+            private static ChromeOptions EBSGoogleMailLogin()
+            {
+                op.AddArgument(CloudFlareBypassxph);
+                op.AddArgument(UserAgentxpth + EBSUserAgentGoogleString);
+                return op;
+            }
+
+            public static ChromeOptions ebsGoogleMailLogin()
+            {
+
+                EBSGoogleMailLogin();
+                return op;
+            }
+            #endregion
         }
         internal class Mouseİslemleri
         {
@@ -892,7 +908,6 @@ namespace Selenium4EgitimSeti
                 drv.ExecuteCdpCommand("Emulation.setDeviceMetricsOverride", kullanicilar);
             }
             #endregion
-
             #region ExecuteCdpCommand ile mobile görünüm
             /// <summary>
             /// Bu metod ile  tarayıcıda useragent,dil,platform gibi verileri değiştiriyoruz.
